@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="classTimer.js"></script>
+    <script>
+    
+       
+
+        
+         function doneThing(text,text1)
+         {
+           alert('0 ' + text + ' 1 ' + text1);
+           //call function with arguments
+           objTimer = new classTimer(10,object, doneThingWa);
+           objTimer.countDown(); 
+         }
+        
+        
+        /* You can use the array arguments
+         
+        function doneThing()
+        {
+           alert('0 ' + arguments[0] + ' 1 ' + arguments[1]);
+           //call function with arguments
+           objTimer = new classTimer(10,object, doneThingWa);
+           objTimer.countDown();    
+        }
+        */
+    
+        
+        function doneThingWa(){
+           alert('Do It again');
+           objTimer = new classTimer(10,object, doneThingWa);
+           objTimer.countDown();   
+        }
+        
+        
+        function init() {
+            object = document.getElementById('divTime');
+            //call function with arguments
+            objTimer = new classTimer(10,object, doneThing,'Done',' with args');
+            objTimer.countDown();
+        }
+
+    </script>
+</head>
+
+<body onload="init()">
+    
+    <div id='divTime'>
+
+    </div>
+    
+</body>
+</html>
