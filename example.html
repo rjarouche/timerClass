@@ -7,9 +7,6 @@
     <script src="classTimer.js"></script>
     <script>
     
-       
-
-        
          function doneThing(text,text1)
          {
            alert('0 ' + text + ' 1 ' + text1);
@@ -39,6 +36,7 @@
         
         
         function init() {
+		    //object could be null 
             object = document.getElementById('divTime');
             //call function with arguments
             objTimer = new classTimer(10,object, doneThing,'Done',' with args');

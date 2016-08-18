@@ -1,5 +1,17 @@
+/*
+   Class made by Rodrigo Sartori Jarouche
+   http://rodrigojarouche.blogspot.com
+   Email: rjarouche@gmail.com
+   Licenced by MIT license
+*/
+
 function classTimer(seconds,obj,execFunction)
 {
+    if(typeof(execFunction)!="function"){
+	  console.log('parameter function is not a function');
+	  return false;
+    }
+	  
     var time = seconds;
     var pObj = obj;
     var funcE = execFunction;
@@ -12,7 +24,10 @@ function classTimer(seconds,obj,execFunction)
         //if time is not zero 
        if((time - 1) >= 0){
            
-           pObj.innerHTML = formatTime(time);
+		   if(pObj != null){
+			 pObj.innerHTML = formatTime(time);   
+		   }
+           
            setTimeout(this.countDown.bind(this),1000);
 		   time--;
 
