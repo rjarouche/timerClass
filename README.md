@@ -1,34 +1,34 @@
 # timerClass
-Javascript class for create a timer. 
+Javascript class for create a timer.<br/> 
 
-A simple javascript class to create an countDown timer in yor project.
-The usage is like this:
+A simple javascript class to create an countDown timer in yor project.<br/>
+The usage is like this:<br/>
 
-objTimer = new classTimer(seconds,objectPrint,function,[, arg1[, arg2[, ...]]]);
-objTimer.countDown();
+objTimer = new classTimer(seconds,objectPrint,function,[, arg1[, arg2[, ...]]]);<br/>
+objTimer.countDown();<br/>
 
-seconds:Time in seconds of countDown timer;
-objectPrint: object that the innerHTML will be set to formatted time
-function: the function that will be triggered when count be zero.
-arg1...: args of the function
-countDown() method starts the timer
+seconds:Time in seconds of countDown timer;<br/>
+objectPrint: object that the innerHTML will be set to formatted time<br/>
+function: the function that will be triggered when count be zero.<br/>
+arg1...: args of the function<br/>
+countDown() method starts the timer<br/>
+<br/>
+Take a look in the example file!;)<br/>
+<br/>
+<br/>
+Classe javascript para criar um timer<br/>
 
-Take a look in the example file!;)
+Uma classe simples javascript para uma relógio em contagem regressiva.<br/>
+O uso desta classe é desta forma:<br/>
 
+objTimer = new classTimer(seconds,objectPrint,function,[, arg1[, arg2[, ...]]]);<br/>
+objTimer.countDown();<br/>
 
-Classe javascript para criar um timer
-
-Uma classe simples javascript para uma relógio em contagem regressiva.
-O uso desta classe é desta forma:
-
-objTimer = new classTimer(seconds,objectPrint,function,[, arg1[, arg2[, ...]]]);
-objTimer.countDown();
-
-seconds:tempo em segundos do timer;
-objectPrint: objeto para exibir o tempo formatado através do innerHtml
-function: função que será chamada ao fim do contador
-arg1...: argumentos da function
-O método countDown(0 inicia o timer.
-
-dê uma olhada no arquivo de exemplo ;)
+seconds:tempo em segundos do timer;<br/>
+objectPrint: objeto para exibir o tempo formatado através do innerHtml<br/>
+function: função que será chamada ao fim do contador<br/>
+arg1...: argumentos da function<br/>
+O método countDown inicia o timer.<br/>
+<br/>
+Dê uma olhada no arquivo de exemplo ;)<br/>
 
