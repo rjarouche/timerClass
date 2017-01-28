@@ -1,7 +1,7 @@
 # timerClass
 <h3>Javascript class for create a timer.</h3><br/> 
 
-A simple javascript class to create an countDown timer in yor project.<br/>
+A simple javascript class (don't need any others javascript libraries) to create an countDown timer in yor project.<br/>
 The usage is like this:<br/>
 
 objTimer = new classTimer(seconds,objectPrint,function,[, arg1[, arg2[, ...]]]);<br/>
@@ -31,8 +31,4 @@ objTimer.countDown();<br/>
 O método countDown inicia o timer.<br/>
 <br/>
 Dê uma olhada no arquivo de exemplo ;) <br/>
-
-Sugestões são muito bem aceitas! :D
-Críticas também!
-:DDDDDD
 
