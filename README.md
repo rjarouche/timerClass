@@ -32,4 +32,3 @@ O método countDown inicia o timer.<br/>
 <br/>
 Dê uma olhada no arquivo de exemplo ;) <br/>
 
-rgttrey
