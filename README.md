@@ -1,7 +1,7 @@
 # timerClass
 <h3>Javascript class for create a timer.</h3><br/> 
 
-A simple javascript class (don't need any others javascript libraries) to create an countDown timer in yor project.<br/>
+A simple javascript class (don't need any others javascript libraries!) to create an countDown timer in yor project.<br/>
 The usage is like this:<br/>
 
 objTimer = new classTimer(seconds,objectPrint,function,[, arg1[, arg2[, ...]]]);<br/>
@@ -18,7 +18,7 @@ Take a look in the example file!;)<br/>
 <br/>
 <h3>Classe javascript para criar um timer</h3><br/>
 
-Uma classe simples javascript para uma relógio em contagem regressiva.<br/>
+Uma classe simples javascript(não precisa de outra biblioteca javascript!) para uma relógio em contagem regressiva.<br/>
 O uso desta classe é desta forma:<br/>
 
 objTimer = new classTimer(seconds,objectPrint,function,[, arg1[, arg2[, ...]]]);<br/>
