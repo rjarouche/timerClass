@@ -30,5 +30,5 @@ objTimer.countDown();<br/>
 <h6>arg1...:</h6> argumentos da function<br/>
 O método countDown inicia o timer.<br/>
 <br/>
-Dê uma olhada no arquivo de exemplo ;)<br/>
+Dê uma olhada no arquivo de exemplo ;) <br/>
 
