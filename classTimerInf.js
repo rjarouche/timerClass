@@ -1,25 +1,18 @@
-/*
-   Class made by Rodrigo Sartori Jarouche
-   http://rodrigojarouche.blogspot.com
-   Email: rjarouche@gmail.com
-   Licenced by MIT license
-*/
-
-function classTimer(seconds,obj,execFunction)
+function classTimerInf(interval,obj,execFunction)
 {
     if(typeof(execFunction)!="function"){
 	  console.log('parameter function is not a function');
 	  return false;
     }
 	  
-    var seconds = seconds;
-    var time = seconds;
+    var time = 0;
+    var interval = interval; 
     var pObj = obj;
     var funcE = execFunction;
     var vStop =false;
     //transform arguments in a stantard array
     var args = Array.prototype.slice.call(arguments);
-    args = args.splice(3,args.length);
+    args = args.splice(4,args.length);
     //function to start
     this.start = function ()
     {
@@ -28,19 +21,19 @@ function classTimer(seconds,obj,execFunction)
             return false;
         }
         
-        //if time is not zero 
-       if((time -1) >= 0){
+        if(pObj != null){
+			   pObj.innerHTML = formatTime(time);   
+		  }
            
-		   if(pObj != null){
-			 pObj.innerHTML = formatTime(time);   
-		   }
-           
-           setTimeout(this.start.bind(this),1000);
-		     time--;
-
-        }else{
-           funcE.apply(null,args);
+        
+        setTimeout(this.start.bind(this),1000);
+		  
+        
+       if(((time) % interval  == 0) && (time) != 0 ){
+            funcE.apply(null,args);
         }
+        
+        time++;
     }
     
     //function to stop counter
@@ -62,10 +55,10 @@ function classTimer(seconds,obj,execFunction)
     //function to reset counter
     this.reset= function()
     {
-        time = seconds;
+        time = 0;
         this.resume();
     }
-    
+        
     //function to format the number to 00:00:00 or 00:00
     function formatTime(seconds)
     {
@@ -91,15 +84,3 @@ function classTimer(seconds,obj,execFunction)
     }
     
 }
-
-
-
-
-
-
-
-
-  
-
-
-

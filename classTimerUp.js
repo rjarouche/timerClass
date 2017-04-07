@@ -1,25 +1,18 @@
-/*
-   Class made by Rodrigo Sartori Jarouche
-   http://rodrigojarouche.blogspot.com
-   Email: rjarouche@gmail.com
-   Licenced by MIT license
-*/
-
-function classTimer(seconds,obj,execFunction)
+function classTimerUp(limit,obj,execFunction)
 {
     if(typeof(execFunction)!="function"){
 	  console.log('parameter function is not a function');
 	  return false;
     }
 	  
-    var seconds = seconds;
-    var time = seconds;
+    var time = 0;
+    var limit = limit; 
     var pObj = obj;
     var funcE = execFunction;
     var vStop =false;
     //transform arguments in a stantard array
     var args = Array.prototype.slice.call(arguments);
-    args = args.splice(3,args.length);
+    args = args.splice(4,args.length);
     //function to start
     this.start = function ()
     {
@@ -27,19 +20,18 @@ function classTimer(seconds,obj,execFunction)
         if(vStop){
             return false;
         }
-        
         //if time is not zero 
-       if((time -1) >= 0){
+       if((time) < limit){
            
 		   if(pObj != null){
 			 pObj.innerHTML = formatTime(time);   
 		   }
            
            setTimeout(this.start.bind(this),1000);
-		     time--;
+		     time++;
 
         }else{
-           funcE.apply(null,args);
+            funcE.apply(null,args);
         }
     }
     
@@ -62,7 +54,7 @@ function classTimer(seconds,obj,execFunction)
     //function to reset counter
     this.reset= function()
     {
-        time = seconds;
+        time = 0;
         this.resume();
     }
     
@@ -91,15 +83,3 @@ function classTimer(seconds,obj,execFunction)
     }
     
 }
-
-
-
-
-
-
-
-
-  
-
-
-

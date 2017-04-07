@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="classTimerUp.js"></script>
+    <script>
+    
+         var objTimer;
+         var countExec = 0;
+    
+        
+        function doneThingWa(){
+           countExec++;
+           document.getElementById('divExec').innerHTML = 'Do It again ' + countExec;
+           objTimer = new classTimerUp(10,object, doneThingWa);
+           objTimer.start();   
+        }
+        
+        function stop(){
+            objTimer.stop();
+        }
+        
+        function resume(){
+            objTimer.resume();
+        }
+        
+        function reset(){
+            objTimer.reset();
+        }
+        
+        
+        function init() {
+		    //object could be null 
+            object = document.getElementById('divTime');
+            objTimer = new classTimerUp(10,object, doneThingWa);
+            objTimer.start();
+        }
+
+    </script>
+</head>
+
+<body onload="init()">
+    
+    <div id='divTime'></div>
+    <div id='divExec'></div>
+    <button onclick="stop()">Stop</button>
+    <button onclick="resume()">Resume</button>
+    <button onclick="reset()">Reset</button>
+    
+</body>
+</html>

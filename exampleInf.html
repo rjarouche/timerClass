@@ -4,37 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <script src="classTimer.js"></script>
+    <script src="classTimerInf.js"></script>
     <script>
     
          var objTimer;
-    
-         function doneThing(text,text1)
-         {
-           document.getElementById('divExec').innerHTML= '0 ' + text + ' 1 ' + text1;
-           //call function with arguments
-           objTimer = new classTimer(10,object, doneThingWa);
-           objTimer.start(); 
-         }
-        
-        
-        /* You can use the array arguments
-         
-        function doneThing()
-        {
-           alert('0 ' + arguments[0] + ' 1 ' + arguments[1]);
-           //call function with arguments
-           objTimer = new classTimer(10,object, doneThingWa);
-           objTimer.start();    
-        }
-        */
+         var countExec = 0;
     
         
         function doneThingWa(){
-           document.getElementById('divExec').innerHTML = 'Do It again';
-           objTimer = new classTimer(10,object, doneThingWa);
-           objTimer.start();   
+           countExec++;
+           document.getElementById('divExec').innerHTML = 'Do It again ' + countExec;
         }
+        
         
          function stop(){
             objTimer.stop();
@@ -53,7 +34,7 @@
 		    //object could be null 
             object = document.getElementById('divTime');
             //call function with arguments
-            objTimer = new classTimer(10,object, doneThing,'Done',' with args');
+            objTimer = new classTimerInf(10,object, doneThingWa);
             objTimer.start();
         }
 
@@ -67,6 +48,5 @@
     <button onclick="stop()">Stop</button>
     <button onclick="resume()">Resume</button>
     <button onclick="reset()">Reset</button>
-    
 </body>
 </html>
