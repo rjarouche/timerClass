@@ -49,6 +49,6 @@ objTimer.start();<br/>
 <h6>reset()</h6> method resets the timer<br/>
 <br/>
 
-
+classTimerAcc.js is equals classTimerInf.js, but it is more accurate, and the 3rd parameters is the precision, if null 100 will be assumed, if you want more precision put p. ex 10
 
 Take a look in the example files!;)<br/>

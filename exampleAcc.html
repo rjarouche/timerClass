@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title></title>
+      
+      <script src="classTimerAcc.js"></script>
+      <script>
+         function doneThingWa(){
+           document.getElementById('divExec').innerHTML += ' x ';
+        }
+        
+         function stop(){
+            objTimer.stop();
+        }
+        
+        function resume(){
+            objTimer.resume();
+        }
+        
+         function reset(){
+            objTimer.reset();
+        }
+                
+        function init() {
+		    //object could be null 
+            object = document.getElementById('timer');
+            //call function with arguments
+            objTimer = new classTimerAcc(10,object, false,doneThingWa);
+            objTimer.start();
+        }
+         
+         
+     </script>
+</head>
+<body onload="init()">
+       <span id="timer"></span>
+       <div id='divExec'></div>
+       <button onclick="stop()">Stop</button>
+       <button onclick="resume()">Resume</button>
+       <button onclick="reset()">Reset</button>
+</body>
+</html>
