@@ -12,7 +12,7 @@ function classTimerInf(interval,obj,execFunction)
     var vStop =false;
     //transform arguments in a stantard array
     var args = Array.prototype.slice.call(arguments);
-    args = args.splice(4,args.length);
+    args = args.splice(3,args.length);
     //function to start
     this.start = function ()
     {
