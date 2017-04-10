@@ -5,81 +5,40 @@ function classTimerUp(limit,obj,execFunction)
 	  return false;
     }
 	  
-    var time = 0;
-    var limit = limit; 
-    var pObj = obj;
-    var funcE = execFunction;
-    var vStop =false;
+  this.time = 0;
+  this.seconds = 0;
+  this.limit = limit; 
+  this.pObj = obj;
+  this.funcE = execFunction;
+  this.vStop =false;
     //transform arguments in a stantard array
-    var args = Array.prototype.slice.call(arguments);
-    args = args.splice(3,args.length);
-    //function to start
-    this.start = function ()
-    {
+  this.args = Array.prototype.slice.call(arguments);
+  this.args = this.args.splice(3,this.args.length);
+}
+
+
+
+classTimerUp.prototype = Object.create(baseTimer.prototype);
+classTimerUp.prototype.constructor = classTimerUp;
+
+
+classTimerUp.prototype.start = function ()
+{
         
-        if(vStop){
+        if(this.vStop){
             return false;
         }
         //if time is not zero 
-       if((time) < limit){
+       if((this.time) < this.limit){
            
-		   if(pObj != null){
-			 pObj.innerHTML = formatTime(time);   
-		   }
+           if(this.pObj != null){
+             this.pObj.innerHTML = this.formatTime(this.time);   
+           }
            
            setTimeout(this.start.bind(this),1000);
-		     time++;
+             this.time++;
 
         }else{
-            funcE.apply(null,args);
+            this.funcE.apply(null,this.args);
         }
-    }
-    
-    //function to stop counter
-    this.stop = function()
-    {
-        vStop = true;
-    }
-    
-    //function to resume counter
-    this.resume= function()
-    {
-        if(vStop){
-           vStop = false;
-           this.start();
-        }
-
-    }
-    
-    //function to reset counter
-    this.reset= function()
-    {
-        time = 0;
-        this.resume();
-    }
-    
-    //function to format the number to 00:00:00 or 00:00
-    function formatTime(seconds)
-    {
-        hour = leftZero(Math.round(seconds/3600));
-        min = leftZero(Math.floor((seconds%3600)/60));
-        sec = leftZero((seconds%3600)%60);
-
-        if(hour == '00'){
-            formatedNumber = min+":"+sec;
-        }else{
-            formatedNumber = hour+":"+min+":"+sec;
-        } 
-        return formatedNumber;
-    }
-    
-    // just for put or not a left zero
-    function leftZero(number)
-    {
-        if (number <= 9){
-          number = "0"+ number;
-        }
-        return number;
-    }
-    
 }
